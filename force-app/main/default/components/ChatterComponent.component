@@ -1,0 +1,6 @@
+<apex:component controller="ChatterComponentController" AllowDML="true">
+    <apex:pageBlock >
+            <apex:inputText value="{!msg}"/>
+            <apex:commandButton value="Post" action="{!post}"/>
+        </apex:pageBlock>
+</apex:component>

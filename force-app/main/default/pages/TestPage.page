@@ -1,0 +1,23 @@
+<apex:page controller="TestPageController" showHeader="false" cache="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockSection >
+                <apex:repeat value="{!fldLst}" var="fld">
+                	<apex:inputField value="{!dTask[fld]}"/>
+                </apex:repeat>
+                <apex:actionFunction action="{!initDependentRecordList}" name="fun" rerender="frm">
+                    <apex:param name="s" assignTo="{!selectStudent}" value="" />
+                </apex:actionFunction>
+                
+               <apex:outputPanel >
+                 <apex:selectList value="{!selectOptionObj}" size="1" >
+                    <apex:selectOptions value="{!dependentRecordLst}"/>
+                </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+           
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>
